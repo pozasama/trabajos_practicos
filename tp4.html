@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Trabajo practico 4</title>
+​
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+​
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<h1 class="text-center">Numeros Primos</h1>
+		<!-- jQuery -->
+		<script src="https://code.jquery.com/jquery.js"></script>
+		<!-- Bootstrap JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+		<script type="text/javascript">
+			(function(){
+			do {
+				var operacion = prompt("¿Que operacion quieres hacer?") .toLowerCase(); 
+			}while (operacion!="suma" && operacion!="resta" && operacion!="multiplicacion" && operacion!="division");
+			
+			do {
+				var numero1 = parseInt(prompt("Introduce el primer n°"));
+			}while (isNaN(numero1));
+
+			do {
+				var numero2 = parseInt(prompt("Introduce el segundo n°"));
+			}while (isNaN(numero2));
+
+			resultado = calculadora(operacion, numero1, numero2);
+			alert(calculadora(operacion, numero1, numero2)); 
+
+			if (esprimo(resultado)){
+				alert ("El numero es primo");
+			} else {
+				alert ("El numero no es primo")
+			};
+				
+			})();
+
+			function esprimo(n){
+				var primo;
+				primo= true;
+				for(var i=2;i<n-1;i++){
+
+					if (n%i==0) {
+						primo=false;
+						break;
+					}					
+				}
+				return primo;
+
+			};
+
+
+
+			function calculadora(operacion, numero1, numero2) {
+				var resultado;
+				switch (operacion) {
+					case "suma":
+					resultado = numero1 + numero2;
+					break;
+					case "resta":
+					resultado = numero1 - numero2;
+					break;
+					case "multiplicacion":
+					resultado = numero1 * numero2;
+					break;
+					case "division":
+					resultado = numero1 / numero2;
+					break;					
+				}				
+				return resultado;
+			};
+
+		</script>
+</body>
+</html>
